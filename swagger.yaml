@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: TracInc Documentation
+  contact: {}
+  version: '1.0'
+servers:
+  - url: http://localhost:3200
+    variables: {}
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: login
+      operationId: login
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/loginrequest'
+                - example:
+                    email: user@gmail.com
+                    password: Test@123
+            example:
+              email: user@gmail.com
+              password: Test@123
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    loginrequest:
+      title: loginrequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: iamhirwejr@gmail.com
+        password: Test@123
+
