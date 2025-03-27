@@ -4,11 +4,11 @@ const ExpertSchema = new mongoose.Schema({
         type:String,
         require: true
     },
-    speciality:{
+    specialty:{
         type: String,
         require:true
     },
-    Expertise:{
+    expertise:{
         type: String,
         require: true
     },
