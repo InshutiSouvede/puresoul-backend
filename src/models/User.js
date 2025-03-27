@@ -15,10 +15,18 @@ const UserSchema = new Schema({
         type:String,
         required: true
     },
-    currency:{
+    phoneNumber:{
         type:String,
-        default:"RWF"
-    }
+        required:false
+    },
+    gender:{
+        type:String,
+        required:false
+    },
+    age:{
+        type:Number,
+        required:false
+    },
 },{timestamps:true})
 
 const Users = model("User",UserSchema)

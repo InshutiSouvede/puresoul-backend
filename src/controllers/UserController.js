@@ -21,8 +21,8 @@ export const getUserById = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const id = req.params.id;
-    const { name, currency } = req.body;
-    const user = await Users.findByIdAndUpdate(id, { name, currency }, { new: true });
+    const { name, phoneNumber, gender, age } = req.body;
+    const user = await Users.findByIdAndUpdate(id, { name, age, gender, phoneNumber}, { new: true });
     res.json({success:true, data:user})
 } catch (error) {
     res.json({ error: true, message: error.message });
