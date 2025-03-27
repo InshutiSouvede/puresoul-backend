@@ -28,3 +28,12 @@ export const updateExpert = async (req, res) => {
     res.json({ error: true, message: error.message });
   }
 };
+export const createExpert = async(req,res)=>{
+    try {
+        const {title, description, author,image} = req.body
+        const expert = await Experts.create({title, description, author,image})
+        res.json({success:true, data: expert})
+    } catch (error) {
+        res.json({error:true, message:error.message})
+    }
+  }
