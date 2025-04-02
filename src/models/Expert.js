@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 const ExpertSchema = new mongoose.Schema({
     name:{
         type:String,
+        unique: true,
         require: true
     },
     specialty:{
@@ -15,7 +16,12 @@ const ExpertSchema = new mongoose.Schema({
     image:{
         type:String,
         require: true
-    }
+    },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        require: false
+    },
 },{timestamps:true})
 
 const Expert = mongoose.model('Expert', ExpertSchema)

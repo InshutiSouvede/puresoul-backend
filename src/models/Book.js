@@ -15,7 +15,11 @@ const BookSchema = new mongoose.Schema({
     image:{
         type:String,
         require: true
-    }
+    },
+    path:{
+        type:String,
+        require: true
+    },
 },{timestamps:true})
 
 const Book = mongoose.model('Book', BookSchema)

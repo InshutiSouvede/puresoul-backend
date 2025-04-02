@@ -30,8 +30,8 @@ export const updateBook = async (req, res) => {
 };
 export const createBook = async(req,res)=>{
   try {
-      const {title, description, author,image} = req.body
-      const book = await Books.create({title, description, author,image})
+      const {title, description, author,image,path} = req.body
+      const book = await Books.create({title, description, author,image, path})
       res.json({success:true, data: book})
   } catch (error) {
       res.json({error:true, message:error.message})
