@@ -3,12 +3,12 @@ import express from "express"
 import mongoose from "mongoose";
 import cors from "cors"
 import SwaggerUI from 'swagger-ui-express'
-import { mongodb_url, port } from "./constants.js";
-import authRouter from "./routes/AuthRouter.js";
-import userRouter from "./routes/UserRoute.js";
+import { mongodb_url, port } from "./src/constants.js";
+import authRouter from "./src/routes/AuthRouter.js";
+import userRouter from "./src/routes/UserRoute.js";
 import YAML from "yamljs";
-import bookRouter from "./routes/BookRoute.js";
-import expertRouter from "./routes/ExpertRoute.js";
+import bookRouter from "./src/routes/BookRoute.js";
+import expertRouter from "./src/routes/ExpertRoute.js";
 
 const swaggerDocumentation = YAML.load("./swagger.yaml")
 const app = express()
